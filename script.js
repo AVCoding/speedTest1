@@ -1,7 +1,7 @@
 
 
 
-window.onload = async function() { 
+window.onload = function() { 
 
 
 
@@ -26,7 +26,7 @@ window.onload = async function() {
   var imageData;
 
 
-  filterButton.addEventListener('click', function () {
+  filterButton.addEventListener('click', async function () {
     console.time('Function #1');
 
     imageData = context.getImageData(0, 0, canvas.width, canvas.height);
