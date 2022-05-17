@@ -4,17 +4,6 @@
 window.onload = async function() { 
 
 
-var info = {
-    'env': asmLibraryArg,
-    'wasi_snapshot_preview1': asmLibraryArg,
-  };
-
-    
-let response = await fetch('Cplus.wasm');
-let bytes = await response.arrayBuffer();
-let wasmObj = await WebAssembly.instantiate(bytes, info);
-wasmExports = wasmObj.instance.exports;
-console.log(wasmExports);
 
 
   var filterButton = document.getElementById('filterButton');
@@ -42,7 +31,21 @@ console.log(wasmExports);
 
     imageData = context.getImageData(0, 0, canvas.width, canvas.height);
 
-      var wwwww = wasmExports.doubleValues(imageData.data, imageData.data.length);
+      
+          var info = {
+            'env': asmLibraryArg,
+            'wasi_snapshot_preview1': asmLibraryArg,
+          };
+
+
+        let response = await fetch('Cplus.wasm');
+        let bytes = await response.arrayBuffer();
+        let wasmObj = await WebAssembly.instantiate(bytes, info);
+        wasmExports = wasmObj.instance.exports;
+        console.log(wasmExports);
+
+        var ddd =  wasmExports.doubleValues(imageData.data, imageData.data.length);
+
 
 
         context.putImageData(imageData, 0, 0);
