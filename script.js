@@ -7,7 +7,7 @@ var info = {
     'wasi_snapshot_preview1': asmLibraryArg,
   };
 
-let response =  fetch('Cplus.wasm').then(response => console.log(response););
+let response =  fetch('Cplus.wasm').then(response => console.log(response));
 // let bytes =  response.arrayBuffer();
 // let wasmObj =  WebAssembly.instantiate(bytes, info);
 // wasmExports = wasmObj.instance.exports;
