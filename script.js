@@ -7,11 +7,11 @@ var info = {
     'wasi_snapshot_preview1': asmLibraryArg,
   };
 
-let response = await fetch('Cplus.wasm');
-let bytes = await response.arrayBuffer();
-let wasmObj = await WebAssembly.instantiate(bytes, info);
-wasmExports = wasmObj.instance.exports;
-console.log(wasmExports);
+let response =  fetch('Cplus.wasm').then(response => console.log(response););
+// let bytes =  response.arrayBuffer();
+// let wasmObj =  WebAssembly.instantiate(bytes, info);
+// wasmExports = wasmObj.instance.exports;
+// console.log(wasmExports);
 
 
   var filterButton = document.getElementById('filterButton');
