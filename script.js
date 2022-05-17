@@ -11,8 +11,10 @@ let response =  fetch('Cplus.wasm').then(response => {
     console.log(response)
     response.arrayBuffer();
 }).then(bits => {
-    let yu = WebAssembly.compile(bits)
-    console.log(yu)
+    
+    console.log(bits)
+    let rrrrr = WebAssembly.instantiate(bytes, info)
+    WebAssembly.instantiate(bytes, info)
         });
     
     
