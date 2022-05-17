@@ -2,13 +2,17 @@
 window.onload = function() { 
 
 
+var info = {
+    'env': asmLibraryArg,
+    'wasi_snapshot_preview1': asmLibraryArg,
+  };
+
 function loadWasm(fileName) { 
   return fetch(fileName)
     .then(response => response.arrayBuffer())
     .then(bits => WebAssembly.compile(bits))
-    .then(module => { return new WebAssembly.Instance(module) });
+    .then(module => { return new WebAssembly.instantiate(bits,info) });
 };
-  
 
 loadWasm('Cplus.wasm')
   .then(instance => {
